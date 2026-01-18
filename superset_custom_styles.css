@@ -1,0 +1,686 @@
+/*
+===============================================================================
+APACHE SUPERSET CUSTOM STYLES - DOCUMENT TAGGING ANALYTICS
+===============================================================================
+Purpose: Professional styling for document-tag relationship dashboards
+Author: Custom styling package
+Last Updated: 2026-01-02
+
+HOW TO USE:
+1. Copy this CSS content
+2. In Superset: Edit Dashboard → Advanced → CSS
+3. Paste the content and save
+4. Refresh the dashboard to see changes
+===============================================================================
+*/
+
+/* ============================================================================
+   GLOBAL DASHBOARD STYLING
+   ============================================================================ */
+
+/* Main dashboard background with gradient */
+.dashboard-content {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Overall container styling */
+.dashboard-component-chart-holder {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.dashboard-component-chart-holder:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* ============================================================================
+   HEADER AND TITLE STYLING
+   ============================================================================ */
+
+/* Dashboard title area */
+.dashboard-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.dashboard-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.dashboard-subtitle {
+    font-size: 16px;
+    opacity: 0.95;
+    margin-top: 8px;
+}
+
+/* Chart titles */
+.chart-header {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px 8px 0 0;
+    margin: -20px -20px 15px -20px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+}
+
+.header-with-description .header-title {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* ============================================================================
+   FILTER AND SLICER STYLING
+   ============================================================================ */
+
+/* Filter container */
+.dashboard-component-filter-box {
+    background: #ffffff;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Filter box styling */
+.filter-box {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.filter-box label {
+    color: #495057;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+/* Select dropdowns in filters */
+.filter-box select,
+.filter-box input {
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.filter-box select:focus,
+.filter-box input:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-box select:hover,
+.filter-box input:hover {
+    border-color: #adb5bd;
+}
+
+/* Filter buttons */
+.filter-box button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+}
+
+.filter-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* ============================================================================
+   TABLE STYLING
+   ============================================================================ */
+
+/* Table container */
+.table-chart {
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+/* Table itself */
+.table-chart table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+}
+
+/* Table header */
+.table-chart thead th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    padding: 16px 12px;
+    text-align: left;
+    border: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* First column header - different color for emphasis */
+.table-chart thead th:first-child {
+    border-radius: 8px 0 0 0;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Last column header */
+.table-chart thead th:last-child {
+    border-radius: 0 8px 0 0;
+}
+
+/* Table body cells */
+.table-chart tbody td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e9ecef;
+    color: #495057;
+}
+
+/* Alternating row colors */
+.table-chart tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Row hover effect */
+.table-chart tbody tr:hover {
+    background-color: #e7f1ff;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* First column - make it bold for emphasis */
+.table-chart tbody td:first-child {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Last row - no border */
+.table-chart tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Table search box */
+.table-chart .dataTables_filter input {
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-left: 10px;
+}
+
+.table-chart .dataTables_filter input:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+/* Pagination styling */
+.table-chart .pagination {
+    margin-top: 15px;
+}
+
+.table-chart .pagination a {
+    color: #667eea;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 0 2px;
+    transition: all 0.3s ease;
+}
+
+.table-chart .pagination a:hover {
+    background-color: #667eea;
+    color: white;
+}
+
+/* ============================================================================
+   CARD / KPI STYLING
+   ============================================================================ */
+
+/* Big number / KPI cards */
+.superset-legacy-chart-big-number {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.superset-legacy-chart-big-number .metric-value {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.superset-legacy-chart-big-number .metric-name {
+    font-size: 16px;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Multi-row card styling */
+.multi-row-card .card-row {
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.multi-row-card .card-row:hover {
+    background-color: #f8f9fa;
+    padding-left: 20px;
+}
+
+.multi-row-card .card-row:last-child {
+    border-bottom: none;
+}
+
+/* ============================================================================
+   CHART STYLING (Line, Bar, Pie)
+   ============================================================================ */
+
+/* Chart containers */
+.chart-container {
+    padding: 10px;
+}
+
+/* Line and bar chart styling */
+.echarts-chart,
+.nv-chart {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Chart legends */
+.nv-legend text,
+.echarts-legend-item {
+    font-size: 13px;
+    font-weight: 500;
+    fill: #495057;
+}
+
+/* Chart axis labels */
+.nv-axis text,
+.echarts-axis-label {
+    font-size: 12px;
+    fill: #6c757d;
+}
+
+/* Grid lines - subtle */
+.nv-axis line,
+.echarts-grid-line {
+    stroke: #e9ecef;
+    stroke-opacity: 0.5;
+}
+
+/* Tooltip styling */
+.nvtooltip,
+.echarts-tooltip {
+    background: rgba(44, 62, 80, 0.95) !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    color: white !important;
+    font-size: 13px !important;
+}
+
+/* ============================================================================
+   MARKDOWN COMPONENT STYLING
+   ============================================================================ */
+
+/* Markdown containers */
+.dashboard-markdown {
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.dashboard-markdown h1 {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.dashboard-markdown h2 {
+    color: #495057;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.dashboard-markdown h3 {
+    color: #667eea;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.dashboard-markdown p {
+    color: #495057;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.dashboard-markdown ul,
+.dashboard-markdown ol {
+    color: #495057;
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+
+.dashboard-markdown li {
+    margin-bottom: 8px;
+}
+
+.dashboard-markdown a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dashboard-markdown a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.dashboard-markdown code {
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #e83e8c;
+}
+
+.dashboard-markdown blockquote {
+    border-left: 4px solid #667eea;
+    padding-left: 20px;
+    margin-left: 0;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* ============================================================================
+   TAB STYLING
+   ============================================================================ */
+
+/* Dashboard tabs */
+.dashboard-component-tabs .nav-tabs {
+    border-bottom: 2px solid #e9ecef;
+    margin-bottom: 20px;
+}
+
+.dashboard-component-tabs .nav-tabs .nav-link {
+    color: #6c757d;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dashboard-component-tabs .nav-tabs .nav-link:hover {
+    color: #667eea;
+    border-bottom-color: #667eea;
+}
+
+.dashboard-component-tabs .nav-tabs .nav-link.active {
+    color: #667eea;
+    border-bottom-color: #667eea;
+    background: linear-gradient(to bottom, rgba(102, 126, 234, 0.1), transparent);
+}
+
+/* ============================================================================
+   BUTTON STYLING
+   ============================================================================ */
+
+/* Generic buttons */
+.btn,
+button {
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Primary button */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Secondary button */
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+/* Action button */
+.action-button {
+    background: white;
+    border: 2px solid #667eea;
+    color: #667eea;
+}
+
+.action-button:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* ============================================================================
+   SCROLLBAR STYLING
+   ============================================================================ */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #5f3c82 100%);
+}
+
+/* ============================================================================
+   LOADING AND ANIMATION
+   ============================================================================ */
+
+/* Loading spinner */
+.loading-indicator {
+    color: #667eea;
+}
+
+/* Fade in animation for charts */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard-component-chart-holder {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .dashboard-content {
+        padding: 10px;
+    }
+    
+    .dashboard-header {
+        padding: 20px;
+    }
+    
+    .dashboard-title {
+        font-size: 24px;
+    }
+    
+    .superset-legacy-chart-big-number .metric-value {
+        font-size: 36px;
+    }
+    
+    .table-chart table {
+        font-size: 12px;
+    }
+    
+    .table-chart thead th,
+    .table-chart tbody td {
+        padding: 10px 8px;
+    }
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+/* Status badges */
+.badge-success {
+    background: #4CAF50;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-warning {
+    background: #FF9800;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-danger {
+    background: #F44336;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-info {
+    background: #2196F3;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Highlight box */
+.highlight-box {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-left: 4px solid #667eea;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+/* Info box */
+.info-box {
+    background: #e7f3ff;
+    border-left: 4px solid #2196F3;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+/* Warning box */
+.warning-box {
+    background: #fff3e0;
+    border-left: 4px solid #FF9800;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+/* Success box */
+.success-box {
+    background: #e8f5e9;
+    border-left: 4px solid #4CAF50;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+/* ============================================================================
+   END OF CUSTOM STYLES
+   ============================================================================ */
